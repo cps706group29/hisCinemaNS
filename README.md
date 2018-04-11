@@ -5,7 +5,7 @@ By default, `ns.hiscinema.com` contains the following Resource Records:
 
 ## Set up
 The following variable should be set:
-- Port for name-server/machine running *ns.hiscinema.com*
+- Port for name-server/machine running *ns.hiscinema.com*  
 Set this line accordingly:
 ```
 public static final int HIS_CINEMA_NS_LISTENING_PORT = xxxxx;
