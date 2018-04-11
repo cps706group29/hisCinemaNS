@@ -12,7 +12,7 @@ public class HisCinemaNS{
     records =  new ArrayList<ResourceRecord>();
     records.add(new ResourceRecord("video.hiscinema.com", "herCDN.com",     "R"));
     records.add(new ResourceRecord("herCDN.com",          "www.herCDN.com", "CN"));
-    records.add(new ResourceRecord("www.herCDN.com",      "127.0.0.1",      "A"));
+    records.add(new ResourceRecord("www.herCDN.com",      HER_CDN_IP,       "A"));
 
     DatagramSocket serverSocket = new DatagramSocket(SERVER_LISTENING_PORT);
     byte[] receiveData = new byte[1024];
@@ -31,7 +31,7 @@ public class HisCinemaNS{
       InetAddress IPAddress = receivePacket.getAddress();
       int port = receivePacket.getPort();
 
-      ///////////////////////// Take requestURL from UDP message, and resolve it ///////////////////////
+      ///////////////////////// RESOLVE REQUEST ///////////////////////
       String response = resolve(requestURL);
       //////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +60,6 @@ public class HisCinemaNS{
       }
     }
     System.out.println("Unable to resolve");
-    return "";
+    return "Unable to resolve";
   }
 }
