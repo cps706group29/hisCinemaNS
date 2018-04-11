@@ -3,6 +3,9 @@ import java.net.*;
 import java.util.*;
 
 public class HisCinemaNS{
+  public static final String HER_CDN_IP = "127.0.0.1";
+  public static final int SERVER_LISTENING_PORT = 40282;
+
   public static ArrayList<ResourceRecord> records;
 
   public static void main(String argv[]) throws Exception{
@@ -11,8 +14,7 @@ public class HisCinemaNS{
     records.add(new ResourceRecord("herCDN.com",          "www.herCDN.com", "CN"));
     records.add(new ResourceRecord("www.herCDN.com",      "127.0.0.1",      "A"));
 
-
-    DatagramSocket serverSocket = new DatagramSocket(40282);
+    DatagramSocket serverSocket = new DatagramSocket(SERVER_LISTENING_PORT);
     byte[] receiveData = new byte[1024];
     byte[] sendData = new byte[1024];
 
