@@ -1,7 +1,7 @@
 # Authoritative Name Server ns.HisCinema.com
 Class `ResourceRecord` stores psuedo resource record objects.  
 By default, `ns.hiscinema.com` contains the following Resource Records:
-- (video.hiscinema.com, herCDN.com, R) *Redirect for herCDN content network*
+- (video.hiscinema.com, herCDN.com, R) *Redirect to herCDN.com TLD*
 
 ## Set up
 The following variable should be set:
