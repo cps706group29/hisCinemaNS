@@ -9,8 +9,4 @@ public class ResourceRecord{
     this.type = type;
   }
 
-  public String resolve(){
-    return this.value;
-  }
-
 }

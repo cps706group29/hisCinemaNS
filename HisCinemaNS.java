@@ -28,11 +28,11 @@ public class HisCinemaNS{
       // Prepare a response
       InetAddress IPAddress = receivePacket.getAddress();
       int port = receivePacket.getPort();
+
       ///////////////////////// Take requestURL from UDP message, and resolve it ///////////////////////
-
-
+      String response = resolve(requestURL);
       //////////////////////////////////////////////////////////////////////////////////////
-      String response = requestURL;
+
       sendData = response.getBytes();
       DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
 
@@ -41,7 +41,23 @@ public class HisCinemaNS{
     }
   }
 
-  private String resolve(String url){
+  private static String resolve(String url){
+    System.out.println("Starting resolution...");
+    String current = url;
+    for(int i = 0; i < records.size(); i++){
+      ResourceRecord record = records.get(i);
+      if(current.trim().equals(record.name.trim())){
+        current = record.value;
+        // Translations always end in an A type
+        if(record.type.equals("A")){
+          System.out.println("Resolved: " + url + " -> " + current);
+          return current;
+        }
+        // Reset the counter
+        i = i - i - 1;
+      }
+    }
+    System.out.println("Unable to resolve");
     return "";
   }
 }
