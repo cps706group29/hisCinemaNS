@@ -1,12 +1,12 @@
 import java.io.*;
 import java.net.*;
+import java.util.*;
 
 public class HisCinemaNS{
-  ArrayList<ResourceRecord> records = new ArrayList<ResourceRecord>();
-
+  public static ArrayList<ResourceRecord> records;
 
   public static void main(String argv[]) throws Exception{
-
+    records =  new ArrayList<ResourceRecord>();
     records.add(new ResourceRecord("video.hiscinema.com", "herCDN.com",     "R"));
     records.add(new ResourceRecord("herCDN.com",          "www.herCDN.com", "CN"));
     records.add(new ResourceRecord("www.herCDN.com",      "127.0.0.1",      "A"));
@@ -29,7 +29,7 @@ public class HisCinemaNS{
       InetAddress IPAddress = receivePacket.getAddress();
       int port = receivePacket.getPort();
       ///////////////////////// Take requestURL from UDP message, and resolve it ///////////////////////
-      
+
 
       //////////////////////////////////////////////////////////////////////////////////////
       String response = requestURL;
@@ -41,6 +41,7 @@ public class HisCinemaNS{
     }
   }
 
-
-
+  private String resolve(String url){
+    return "";
+  }
 }
