@@ -3,7 +3,7 @@ import java.net.*;
 import java.util.*;
 
 public class HisCinemaNS{
-  public static final int HIS_CINEMA_NS_LISTENING_PORT = 40282;
+  public static final int HIS_CINEMA_NS_PORT = 40282;
 
   public static ArrayList<ResourceRecord> records;
 
@@ -11,7 +11,7 @@ public class HisCinemaNS{
     records =  new ArrayList<ResourceRecord>();
     records.add(new ResourceRecord("video.hiscinema.com", "herCDN.com",     "R"));
 
-    DatagramSocket serverSocket = new DatagramSocket(HIS_CINEMA_NS_LISTENING_PORT);
+    DatagramSocket serverSocket = new DatagramSocket(HIS_CINEMA_NS_PORT);
     byte[] receiveData = new byte[1024];
     byte[] sendData = new byte[1024];
 
