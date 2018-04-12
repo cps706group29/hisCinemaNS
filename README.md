@@ -1,19 +1,14 @@
-# Authoritative Name Server ns.HisCinema.com
-Class `ResourceRecord` stores psuedo resource record objects.  
+# Authoritative Name Server `ns.HisCinema.com`
+
 By default, `ns.hiscinema.com` contains the following Resource Records:
-- (video.hiscinema.com, herCDN.com, R) *Redirect to herCDN.com TLD*
+| Resource Record | Use |
+| - | - |
+| (video.hiscinema.com, herCDN.com, R) | Redirects to CDN `herCDN.com` |
 
-## Set up
-The following variable should be set:
-- Port for name-server/machine running *ns.hiscinema.com*  
-
-Set this line accordingly:
-```
-public static final int HIS_CINEMA_NS_LISTENING_PORT = xxxxx;
-```
-## Run
-To run
+## Compile and Run
 ```
 javac HisCinemaNS.java
 java HisCinemaNS
 ```
+Set following variables after running the program:
+- **PORT** for the name-server/machine running `ns.hiscinema.com`
